@@ -1,8 +1,8 @@
 {
   "package": "haiccing/base-docs-uri",
-  "content": "0bb1a6fe055a577a819801d5951421d6224a06957f9589f6bc747f35abe89731",
+  "content": "8ceb6a02587619c9f343f3e96fb71194b160c2ee0a0b267d2d9f211fa847959b",
   "bare": "v1.36.0",
-  "date": "2026-11-25T08:50:00.010Z",
+  "date": "2026-11-26T11:06:05.459Z",
   "set": "full",
   "ok": true,
   "units": [
@@ -166,12 +166,12 @@
       "unit": "/test/modules/pear-full-square/pkgm-base-check",
       "ok": true,
       "tests": {
-        "passed": 26,
-        "total": 26
+        "passed": 27,
+        "total": 27
       },
       "asserts": {
-        "passed": 90,
-        "total": 90
+        "passed": 94,
+        "total": 94
       },
       "failures": []
     }
