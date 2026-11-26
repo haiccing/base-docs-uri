@@ -33,20 +33,27 @@ canonical form.
 
 - **No leading slash**: a URI is relative to where its writer stands. `.`
   is the position itself, and so is none given; `./x` is `x`.
-- **From outside**, a command's writer stands at `main`: `.` is `main`,
-  `host` is `main/host`. The outside reaches `main` and nothing else; a
-  flag names another layer.
-- **The mrepo itself**, a hook or a request of its own, stands at its
-  root, above the layers, and names the layer first.
+- **A command's writer stands at `main`**, whoever writes it: `.` is
+  `main`, `host` is `main/host`; a flag names another layer
+  (`layer=runtime`). The outside reaches `main` and nothing else; the
+  mrepo's own requests, a hook's line, are written the same way and are
+  allowed any layer: one pattern (the human, 2026-11-26: "use one
+  path").
 - **No `..`**: a running mrepo sees only forward; outside it is reached
   through a mapping.
 
 ## Segments
 
-Inside, in a request's form, a URI is an array of segments, each a
-relative URI of one or more parts: the prefix where its writer stands,
-then the URI as written. From outside: `["main", "host"]`, `["main",
-"."]`. Outside, a URI is one segment, as it is written.
+Inside, in a request's form, a URI is a chain of parts, kept apart so no boundary is
+parsed again: the layer first, then the local root positions gone
+through, then the URI as written, the last (the
+human, 2026-11-26: "it always starts with the mrepo layer to begin with.
+That is then follow by URI local root positions, ending in a relative
+end URI"): `["main", "host"]`, `["main", "."]`, `["main",
+"swarms/swarm-1", "."]`, `["runtime", "hooks"]`. Each part a relative
+URI. A request submitted to an mrepo forgets its path outside it:
+forward visibility only. Read as one URI, for a query, its parts are
+joined. Outside, a URI is one, as it is written.
 
 ## Selecting
 
