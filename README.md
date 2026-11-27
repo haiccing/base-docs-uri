@@ -18,6 +18,9 @@ canonical form.
 
 - **A part**: lowercase `a-z`, `0-9`, `-`. Any folder can become a
   branch and the other way round. `_` is reserved: see "Data names".
+- **`avro` is reserved as a type's first part**: AVRO's own types,
+  `avro/string` and the rest (`base-docs-avro`, "Names"); no
+  organisation takes that name.
 - **A file's part includes its extension**: a name, then optional
   `.`-separated extensions of the same characters (`request.md`). A leaf
   is an object, its storage format part of its name.
